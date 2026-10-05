@@ -4,31 +4,6 @@ declare(strict_types=1);
 
 namespace TranslatorSage\Sdk;
 
-class TsageException extends \RuntimeException
-{
-    /** @var int|null */
-    public $statusCode;
-    /** @var mixed */
-    public $body;
-    /** @var string|null */
-    public $requestId;
-
-    public function __construct(string $message, ?int $statusCode = null, $body = null, ?string $requestId = null)
-    {
-        parent::__construct($message);
-        $this->statusCode = $statusCode;
-        $this->body = $body;
-        $this->requestId = $requestId;
-    }
-}
-
-class AuthException extends TsageException {}       // 401
-class ForbiddenException extends TsageException {}  // 403
-class NotFoundException extends TsageException {}   // 404
-class ValidationException extends TsageException {} // 422
-class RateLimitException extends TsageException {}  // 429
-class ServerException extends TsageException {}     // 5xx
-
 final class ErrorMap
 {
     public static function forStatus(int $status, $body, ?string $requestId): TsageException
