@@ -1,0 +1,29 @@
+{
+  "name": "translatorsage/sdk",
+  "description": "Official PHP SDK for the TranslatorSage API (TTS, STT, dubbing, translate, voices, agents). ElevenLabs-compatible shim included.",
+  "type": "library",
+  "license": "Apache-2.0",
+  "keywords": ["translatorsage", "tts", "stt", "dubbing", "translation", "elevenlabs", "ai-voice"],
+  "homepage": "https://github.com/kokhp/tsage-sdk-php",
+  "require": {
+    "php": ">=7.4",
+    "ext-json": "*",
+    "ext-curl": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.0 || ^10.0 || ^11.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "TranslatorSage\\Sdk\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "TranslatorSage\\Sdk\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
